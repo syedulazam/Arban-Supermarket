@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arban supermarket</title>
+    <link rel ="icon" type ="image/x-icon" href = "supermarketfavicon.ico">
+
+</head>
+
+<body>
+
+    <script>
+    function showConfirmation(message, redirectUrl) {
+        // Create a new popup window
+        var popupWindow = window.open('', 'Popup', 'width=300,height=200');
+      
+        // Write the message into the popup window
+        popupWindow.document.write('<p>' + "Are you sure you want to log out?" +'</p>');
+      
+        // Add a "Yes" button to the popup window
+        popupWindow.document.write('<button onclick="redirectTo(\'' + "Home.html" + '\')">Yes</button>');
+      
+        // Add a "No" button to the popup window
+        popupWindow.document.write('<button onclick="window.close()">No</button>');
+      }
+      
+      function redirectTo(url) {
+        // Redirect to the specified URL
+        window.location.href = "Sign up.html";
+      }
+      </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+    <link rel="icon" type = image/x-icon href="supermarketfavicon.ico">
+    <title>Arban supermarket</title>
+
+    <style>
+    body{
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      .header{
+        position: relative;
+        right:-75%;
+        top: 6%;
+    }
+      .navbar ul{
+        list-style: none;
+        background:white;
+        padding:0;
+        margin:0;
+        text-align:center;
+    }
+    .navbar li{
+        display: inline-block;
+    }
+    .navbar a{
+        text-decoration: none;
+        color: black;
+        width: 100px;
+        display: block;
+        padding: 45px 20px;
+        font-size: 15px;
+        text-transform: uppercase;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+    .navbar a:hover {
+        color: red;
+        transform: scale(1.2); 
+      }
+    .logo{
+        position:absolute;
+        height:auto;
+        left:0px;
+        width:155px;
+        margin:-10px;
+    }
+    .Prods{
+        background-color: #ffffff;
+        padding: 20px;
+        text-align: center;
+        color: #555;
+      
+    }
+    .Prods h1{
+        margin: 0;
+          font-size: 24px;
+        
+    }
+        .container {
+          max-width: 960px;
+          margin: 0 auto;
+          padding: 20px;
+        }
+    
+        .product {
+          display: flex;
+          margin-bottom: 20px;
+          padding: 10px;
+          border: 1px solid #ccc;
+        }
+    
+        .product-image {
+          flex: 0 0 200px;
+        }
+    
+        .product-image img {
+          width: 100%;
+          height: auto;
+        }
+    
+        .product-details {
+          flex: 1;
+          margin-bottom: 0px;
+        }
+    
+        .product-title {
+          font-size: 18px;
+          margin: 0;
+        }
+    
+        .product-price {
+          font-size: 16px;
+          color: #888;
+          margin: 10px 0;
+        }
+    
+        .product-description {
+          color: #555;
+        }
+        </style>
+
+<style>
+    ul {
+        list-style-type: none;
+        background-color: #2595E8;
+      }
+    li{
+        float:right;
+        border: 1px solid a;
+        padding-bottom: 1px;
+    }
+    li a{
+        display:block;
+        color: black;
+        padding-bottom: 0px;
+        padding-top: 16px;
+        padding-right: 30px;
+        padding-left: 30px;
+        font-size: 22px;
+        background-color: #2595E8;
+    }
+    li a:hover{
+            background-color: lightskyblue;
+    }
+</style>   
+
+</head>
+    
+    <body>
+ 
+        <div class="Prods">
+            <h1>Products</h1>
+          </div>
+
+        <div class="container">
+          <div class="product">
+              <img src="apple.jpg" alt="Product 1">
+            </div>
+            <div class="product-details">
+              <h3 class="product-title"> Apple</h3>
+              <p class="product-price">3.4Dhs/Kg</p>
+              <button onclick="addToCart('Apple', 3.4)">Add to Cart</button>
+            </div>
+          </div>
+        
+
+          <div class="container">
+            <div class="product">
+              <img src="beef.jpg" alt="Product 2">
+            </div>
+            <div class="product-details">
+              <h3 class="product-title">Beef</h3>
+              <p class="product-price">2.8Dhs/Kg</p>
+              <button onclick="addToCart(' Onion', 2.8)">Add to Cart</button>
+            </div>
+          </div>
+        
+
+        <div class="container">
+          <div class="product">
+            <img src="mango.jpg" alt="Product 3">
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Mango</h3>
+            <p class="product-price">2.6Dhs/Kg</p>
+            <button onclick="addToCart(' Garlic', 2.6)">Add to Cart</button>
+             </div>
+          </div>
+        
+
+        <div class="container">
+          <div class="product">
+            <img src="Dishwasher.jpg" alt="Product 4">
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">dishwasher</h3>
+            <p class="product-price">2.3Dhs/Kg</p>
+            <button onclick="addToCart(' chili', 2.3)">Add to Cart</button>
+              </div>
+          </div>
+        
+        <div class="container">
+          <div class="product">
+            <img src="Potato.jpg" alt="Product 5">
+            
+          </div>
+          <div class="product-details">
+            <h3 class="product-title">Potato</h3>
+            <p class="product-price">3.4Dhs/Kg</p>
+            <button onclick="addToCart(' Potato', 3.4)">Add to Cart</button>
+            </div>
+          </div>
+        
+  
+<!-- Link to the checkout page -->
+<a href="Checkout.html">Proceed to Checkout</a>
+
+<script>
+  function addToCart(productName, price) {
+    // Retrieve the cart data from local storage
+    var cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    // Add the selected product to the cart
+    var product = {
+      name: productName,
+      price: price
+    };
+    cartItems.push(product);
+
+    // Save the updated cart data to local storage
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+
+    // Provide feedback to the user (optional)
+    alert('Product added to cart!');
+  }
+</script>
+ 
+ 
+</body>
+</html>
+ 
